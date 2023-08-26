@@ -1,5 +1,6 @@
 import moment, { Moment } from "moment";
 import React, { useEffect, useState } from "react";
+import "./input.css";
 require("moment/locale/tr");
 interface IProps {
   data: IData;
@@ -25,7 +26,7 @@ const HDHeader = ({ data }: IProps) => {
     setHi(`Selamlar, ${username}`);
   };
   return (
-    <div>
+    <header className="container bg-slate-400 mx-auto">
       HDHeader {username} <br /> {fname} <br /> {lname} <br />{" "}
       {ageState?.format("LLLL")}
       <br />
@@ -36,7 +37,7 @@ const HDHeader = ({ data }: IProps) => {
       </button>
       <br />
       {hi}
-    </div>
+    </header>
   );
 };
 
