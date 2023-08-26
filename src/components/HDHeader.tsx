@@ -1,7 +1,6 @@
 import moment, { Moment } from "moment";
 import React, { useEffect, useState } from "react";
 require("moment/locale/tr");
-
 interface IProps {
   data: IData;
 }
@@ -16,7 +15,7 @@ type IData = {
 const HDHeader = ({ data }: IProps) => {
   const { username, fname, lname, birthdate } = data;
   const [ageState, setAgeState] = useState<Moment>();
-  const [hi, setHi] = useState<string>();
+  const [hi, setHi] = useState<string>("selam!");
   useEffect(() => {
     const bd = moment(birthdate, "DD-MM-YYYY");
     setAgeState(bd);
@@ -25,7 +24,6 @@ const HDHeader = ({ data }: IProps) => {
   const handleHi = () => {
     setHi(`Selamlar, ${username}`);
   };
-
   return (
     <div>
       HDHeader {username} <br /> {fname} <br /> {lname} <br />{" "}

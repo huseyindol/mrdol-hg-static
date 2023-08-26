@@ -4,19 +4,26 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 
 const packageJson = require("./package.json");
-
+const output = {
+  name: "reactStaticComp",
+  globals: {
+    react: "React",
+  },
+};
 export default [
   {
     input: "src/index.ts",
     output: [
       {
+        ...output,
         file: packageJson.main,
         format: "cjs",
         sourcemap: true,
       },
       {
+        ...output,
         file: packageJson.module,
-        format: "cjs",
+        format: "esm",
         sourcemap: true,
       },
     ],
@@ -25,6 +32,7 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
     ],
+    external: ["react", "react-dom"],
   },
   {
     input: "dist/esm/types/index.d.ts",
