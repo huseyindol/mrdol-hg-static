@@ -20,8 +20,7 @@ jobs:
           node-version: 19
           registry-url: https://registry.npmjs.org
       - name: publish
-        run: npm publish --access public
-        working-directory: mrdol-hg-static
+        run: npm publish 
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
       
