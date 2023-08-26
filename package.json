@@ -1,6 +1,6 @@
 {
   "name": "mrdol-hg-static",
-  "version": "1.0.32",
+  "version": "1.0.31",
   "description": "",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
@@ -41,5 +41,8 @@
     "rollup-plugin-dts": "^6.0.0",
     "tailwindcss": "^3.3.3",
     "tslib": "^2.6.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/huseyindol"
   }
 }
